@@ -31,24 +31,7 @@
 		</nav>
 	</header>
 	
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      </div>
-	      <div class="modal-body">
-	        ...
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	
 	
 	<div class="layout-main">
 	
@@ -209,9 +192,18 @@
 		                            <a class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/editar/{id}(id = ${funcionario.id})}" role="button" onclick="Escolha2()">
 		                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 		                            </a>
-		                            <button class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/remover/{id}(id = ${funcionario.id})}" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" >
+		                            <a class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/remover/{id}(id = ${funcionario.id})}" role="button" onclick="Escolha1()">
 		                                <span class="oi oi-circle-x" title="Remover" aria-hidden="true"></span>
-		                            </button>
+		                            </a>
+		                            <nav class="navbar navbar-default">
+									  <div class="container-fluid">
+									    <div class="navbar-header">
+									      <a class="navbar-brand" href="./User.png">
+									        <img alt="Brand" src="C:\Users\crist\eclipse-workspace\loja\src\main\resources\templates\administrativo\funcionarios\User.png">
+									      </a>
+									    </div>
+									  </div>
+									</nav>
 		                            
 		                            <script>
 		                            
