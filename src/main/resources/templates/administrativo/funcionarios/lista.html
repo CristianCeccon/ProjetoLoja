@@ -3,6 +3,10 @@
       xmls:th="http://thymeleaf.org"
       xmls:layout="http://www.ultraq.net/thymeleaf/layout">
 <head>
+	<!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+    
     <title>Spring-Boot Básico</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -10,9 +14,6 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
     
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet"/>
@@ -209,7 +210,7 @@
 		                            <a class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/editar/{id}(id = ${funcionario.id})}" role="button" onclick="Escolha2()">
 		                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 		                            </a>
-		                            <button class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/remover/{id}(id = ${funcionario.id})}" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" >
+		                            <button class="btn btn-info btn-sm" th:href="@{/administrativo/funcionarios/remover/{id}(id = ${funcionario.id})}" data-toggle="modal" data-target="#exampleModal1" >
 		                                <span class="oi oi-circle-x" title="Remover" aria-hidden="true"></span>
 		                            </button>
 		                            
@@ -244,15 +245,35 @@
             <span class="footer-copy">&copy; 2018 MBallem. Todos os direitos reservados.</span>
         </div>
     </footer>	
-
+    
+    <!-- Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Atencao</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        Voce tem certeza que quer deletar esse usuario ?
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		    
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/webjars/jquery/jquery.min.js"></script>
-<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
 
     $(function () {
         $('[data-toggle="popover"]').popover();
