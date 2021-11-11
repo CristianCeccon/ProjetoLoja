@@ -24,7 +24,7 @@
 	        </div>
 	
 	        <div class="container" id="cadastro">
-	            <form action="/administrativo/funcionarios/salvar" th:object="${funcionario}"method="POST">
+	            <form  action="/administrativo/funcionarios/salvar" th:object="${funcionario}"method="POST" onsubmit="return isValidCPF()">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Nome do Funcionário</label>
@@ -117,6 +117,12 @@
 	
 	                        </div>
 	                    </div>
+	                    <div class="form-group col-md-6">
+							<label for="cpf">CPF</label>
+							<input type="text" class="form-control cpf-mask"  onblur="if (this.value !== '') {isValidCPF()}" data-mask="000.000.000-00" id="cpf" name="cpf" th:field="*{cpf}" data-minlength="14" maxlength="14" required />
+							<span class="font-weight-bold text-danger" role="alert" id="retornoFalse"></span>
+							<span class="font-weight-bold text-success" role="alert" id="retornoTrue"></span>
+						</div>
 	                </div>
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
