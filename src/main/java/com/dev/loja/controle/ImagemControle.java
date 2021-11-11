@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dev.loja.constants.ImagemC;
 import com.dev.loja.modelos.Estado;
 import com.dev.loja.modelos.Produto;
 import com.dev.loja.repositorios.EstadoRepositorio;
@@ -27,13 +28,13 @@ import com.dev.loja.repositorios.ProdutoRepositorio;
 @Controller
 public class ImagemControle {
 	
-	
-	private static String caminhoImagens = "C:\\Frank\\Imagens-loja\\";	
+	ImagemC ImagemCaminho;
+	//private static String caminhoImagens = "C:\\Frank\\Imagens-loja\\";	
 	
 	@GetMapping("/mostrarImagem/{imagem}")
 	@ResponseBody
 	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
-		File imagemArquivo = new File(caminhoImagens+imagem);
+		File imagemArquivo = new File(ImagemC.ImagemCaminho+imagem);
 		if(imagem!=null || imagem.trim().length()>0) {
 			
 			return Files.readAllBytes(imagemArquivo.toPath());
