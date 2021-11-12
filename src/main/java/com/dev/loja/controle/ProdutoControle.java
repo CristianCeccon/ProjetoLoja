@@ -24,8 +24,10 @@ import com.dev.loja.constants.ImagemC;
 import com.dev.loja.modelos.Estado;
 import com.dev.loja.modelos.Imagem;
 import com.dev.loja.modelos.Produto;
+import com.dev.loja.repositorios.CategoriaRepositorio;
 import com.dev.loja.repositorios.EstadoRepositorio;
 import com.dev.loja.repositorios.ImagemRepositorio;
+import com.dev.loja.repositorios.MarcaRepositorio;
 import com.dev.loja.repositorios.ProdutoRepositorio;
 
 @Controller
@@ -39,11 +41,20 @@ public class ProdutoControle {
 
 	@Autowired
 	private ProdutoRepositorio produtoRepositorio;
+	
+	@Autowired
+    private CategoriaRepositorio categoriaRepositorio;
+	
+	@Autowired
+	private MarcaRepositorio marcaRepositorio;
+	
 
 	@GetMapping("/administrativo/produtos/cadastrar")
 	public ModelAndView cadastrar(Produto produto) {
 		ModelAndView mv = new ModelAndView("/administrativo/produtos/cadastro");
 		mv.addObject("produto", produto);
+		mv.addObject("categoriasLista", categoriaRepositorio.findAll());
+		mv.addObject("marcasLista", marcaRepositorio.findAll());
 		return mv;
 	}
 
