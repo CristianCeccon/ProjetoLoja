@@ -50,7 +50,9 @@
                             <h2 class="card-title"><span th:text="${produto.descricao}"></span></h2>
                             <p class="card-text">Me leve pra casa!</p>
                         </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">+Mais Informações</a></div>
+                        <div class="card-footer">
+                        	<a class="btn btn-primary btn-lg btn-block0" th:href="@{/adicionarCarrinho/{id}(id=${produto.id})}" role="button">Comprar</a>
+                        </div>
                     </div>
                     
                 </div>
