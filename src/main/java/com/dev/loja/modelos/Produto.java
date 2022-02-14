@@ -1,6 +1,7 @@
 package com.dev.loja.modelos;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,19 @@ public class Produto implements Serializable{
 	private String marca;
 	private Double quantidadeEstoque = 0.;
 	private String nomeImagem;
+	
+	 @Override
+	    public boolean equals(Object o) {
+	        if (this == o) return true;
+	        if (o == null || getClass() != o.getClass()) return false;
+	        Produto produto = (Produto) o;
+	        return Objects.equals(id, produto.id) && Objects.equals(descricao, produto.descricao) && Objects.equals(valorVenda, produto.valorVenda) && Objects.equals(quantidadeEstoque, produto.quantidadeEstoque) &&  Objects.equals(marca, produto.marca) && Objects.equals(categoria, produto.categoria);
+	    }
+
+	    @Override
+	    public int hashCode() {
+	        return Objects.hash(id, descricao, valorVenda, quantidadeEstoque, marca, categoria);
+	    }
 	
 	
 	
